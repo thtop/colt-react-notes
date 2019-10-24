@@ -26,4 +26,4 @@ function Hello2() {
 
 ReactDOM.render(<Hello2 />, document.getElementById('root'));
 
-ReactDOM.render(<Hello />, document.getElementById('root'));
+//ReactDOM.render(<Hello />, document.getElementById('root'));
