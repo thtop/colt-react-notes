@@ -48,3 +48,74 @@ class NameForm extends Component {
   }
 }
 ```
+
+## Handling Multipoe Inputs
+
+```js
+import React from "react";
+
+class FormDemo extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { username: "", email: "", password: "" };
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    alert(`You types: ${this.state.username}`);
+    this.setState({ username: "" });
+  }
+
+  handleChange(e) {
+    this.setState({ [e.target.name]: e.target.value });
+  }
+
+  render() {
+    return (
+      <div>
+        <h1>Form Demo</h1>
+        <form onSubmit={this.handleSubmit}>
+          <input
+            type="text"
+            name="username"
+            value={this.state.username}
+            placeholder="username"
+            onChange={this.handleChange}
+          />
+          <input
+            type="text"
+            name="email"
+            value={this.state.email}
+            placeholder="email"
+            onChange={this.handleChange}
+          />
+          <input
+            type="text"
+            name="password"
+            value={this.state.password}
+            placeholder="password"
+            onChange={this.handleChange}
+          />
+          <button type="submit">Add!</button>
+        </form>
+      </div>
+    );
+  }
+}
+
+export default FormDemo;
+```
+
+## The htmlFor Attribure
+
+```js
+<lable htmlFor="username">Username</lable>
+```
+
+## Design Pattern: Passing Date Upwards
+
+## Keys UUID
+
+- `npm install uuid`
